@@ -26,3 +26,5 @@ export class Tab1Page {  private lifesatisfaction : FormGroup;
     console.log(this.lifesatisfaction.value)
   }
 }
+
+//TODO: Integrate LogService, Develop to http service
