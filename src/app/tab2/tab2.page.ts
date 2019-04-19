@@ -29,8 +29,6 @@ export class Tab2Page {
   logForm(){
     console.log(this.actionsatisfaction.value)
   }
-
   
-
 }
 
