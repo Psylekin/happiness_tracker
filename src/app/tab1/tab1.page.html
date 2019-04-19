@@ -6,12 +6,6 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-card>
-  <ion-card-content>
-    Hier kommt die Lebenszufriedenheitsmessung rein.
-  </ion-card-content>
-</ion-card>
-
 <form [formGroup]="lifesatisfaction" (ngSubmit)="logForm()">
   <ion-list>
     <ion-radio-group formControlName="lifesatisfationValue">

@@ -19,6 +19,7 @@ export class Tab2Page {
     this.date = formatDate(new Date(), 'dd.MM.yyyy', 'en');
     this.timeOfDay = formatDate(new Date(), 'HH:mm', 'en');
     this.lifesatisfaction = this.formBuilder.group({
+      activity : ['No answer', Validators.required],
       lifesatisfationValue: ['Not filled out', Validators.required],
       date: [this.date],
       timeOfDay: [this.timeOfDay]
