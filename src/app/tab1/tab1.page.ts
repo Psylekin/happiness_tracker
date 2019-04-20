@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 import {formatDate} from '@angular/common';
-import { LogService } from '../services/log.service';
 import { HttpService } from '../services/http.service';
 import { ToastService } from '../services/toast.service';
 import { UiStateService } from '../services/ui-state.service';
@@ -19,8 +18,7 @@ export class Tab1Page implements OnInit{
   private isHappiDone : boolean;
 
   constructor( 
-    private formBuilder: FormBuilder, private logService : LogService, 
-    private httpService : HttpService, private toastService : ToastService,
+    private formBuilder: FormBuilder, private httpService : HttpService, private toastService : ToastService,
     private uiState: UiStateService ) {
     
     this.date = formatDate(new Date(), 'dd.MM.yyyy HH:mm', 'en');

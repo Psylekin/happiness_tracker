@@ -9,18 +9,15 @@ import { UiStateService } from '../services/ui-state.service';
 export class Tab3Page {
 
   isHappiDone : boolean
+  isActDone : boolean
 
   constructor(private uiState : UiStateService){
   }
 
-ngOnInit(){
-  this.uiState.happiChange.subscribe(
-    value => {this.isHappiDone = value;}
-  )
-}
-
-  get_isHappyDone(){
-    return  this.uiState.get_doneHappiness();
-  }
-
+  ngOnInit(){
+    this.uiState.happiChange.subscribe(
+      value => {this.isHappiDone = value;});
+    this.uiState.ActSatChange.subscribe(
+      value => {this.isActDone = value;})
+    }
 }
