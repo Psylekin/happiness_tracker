@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 import {formatDate} from '@angular/common';
 import { HttpService } from '../services/http.service';
+import { ToastService } from '../services/toast.service';
 
 
 @Component({
@@ -15,9 +16,11 @@ export class Tab2Page {
   public now : Date = new Date();
   public date : string;
 
-  constructor( private formBuilder: FormBuilder, private httpService : HttpService) {
-    this.date = formatDate(new Date(), 'dd.MM.yyyy HH:mm', 'en');
+  constructor( 
+    private formBuilder: FormBuilder, private httpService : HttpService,
+    private toastService : ToastService) {
 
+    this.date = formatDate(new Date(), 'dd.MM.yyyy HH:mm', 'en');
     this.actionsatisfaction = this.formBuilder.group({
       activity : ['', Validators.required],
       actionsatisfactionValue: ['', Validators.required],
@@ -27,6 +30,7 @@ export class Tab2Page {
 
   sendForm(){
     this.httpService.save_measurement(this.actionsatisfaction.value)
+    this.toastService.presentToast('Erfolg','Vielen Dank!')
   }
   
 }
