@@ -1,6 +1,8 @@
 {
   "name": "happiness_measurement",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "5ed68041"
 }

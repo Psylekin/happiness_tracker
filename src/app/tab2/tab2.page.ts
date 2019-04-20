@@ -12,18 +12,15 @@ import {formatDate} from '@angular/common';
 export class Tab2Page {
   private actionsatisfaction : FormGroup;
   public now : Date = new Date();
-  public date : string; 
-  public timeOfDay : string;
+  public date : string;
 
   constructor( private formBuilder: FormBuilder ) {
-    this.date = formatDate(new Date(), 'dd.MM.yyyy', 'en');
-    this.timeOfDay = formatDate(new Date(), 'HH:mm', 'en');
+    this.date = formatDate(new Date(), 'dd.MM.yyyy HH:mm', 'en');
 
     this.actionsatisfaction = this.formBuilder.group({
       activity : ['', Validators.required],
       actionsatisfactionValue: ['', Validators.required],
-      date: [this.date],
-      timeOfDay: [this.timeOfDay]
+      date: [this.date]
     });
   }
   logForm(){

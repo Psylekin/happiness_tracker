@@ -12,17 +12,14 @@ import { LogService } from '../services/log.service';
 export class Tab1Page {  
   private lifesatisfaction : FormGroup;
   public now : Date = new Date();
-  public date : string; 
-  public timeOfDay : string;
+  public date : string;
 
   constructor( private formBuilder: FormBuilder, private logService : LogService ) {
-    this.date = formatDate(new Date(), 'dd.MM.yyyy', 'en');
-    this.timeOfDay = formatDate(new Date(), 'HH:mm', 'en');
+    this.date = formatDate(new Date(), 'dd.MM.yyyy HH:mm', 'en');
     
     this.lifesatisfaction = this.formBuilder.group({
       lifesatisfationValue: ['', Validators.required],
-      date: [this.date],
-      timeOfDay: [this.timeOfDay]
+      date: [this.date]
     });
   }
 
