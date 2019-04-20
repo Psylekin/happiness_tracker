@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 import {formatDate} from '@angular/common';
+import { HttpService } from '../services/http.service';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class Tab2Page {
   public now : Date = new Date();
   public date : string;
 
-  constructor( private formBuilder: FormBuilder ) {
+  constructor( private formBuilder: FormBuilder, private httpService : HttpService) {
     this.date = formatDate(new Date(), 'dd.MM.yyyy HH:mm', 'en');
 
     this.actionsatisfaction = this.formBuilder.group({
@@ -23,8 +24,9 @@ export class Tab2Page {
       date: [this.date]
     });
   }
-  logForm(){
-    console.log(this.actionsatisfaction.value)
+
+  sendForm(){
+    this.httpService.save_measurement(this.actionsatisfaction.value)
   }
   
 }

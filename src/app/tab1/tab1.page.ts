@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 import {formatDate} from '@angular/common';
 import { LogService } from '../services/log.service';
+import { HttpService } from '../services/http.service';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class Tab1Page {
   public now : Date = new Date();
   public date : string;
 
-  constructor( private formBuilder: FormBuilder, private logService : LogService ) {
+  constructor( private formBuilder: FormBuilder, private logService : LogService, private httpService : HttpService ) {
     this.date = formatDate(new Date(), 'dd.MM.yyyy HH:mm', 'en');
     
     this.lifesatisfaction = this.formBuilder.group({
@@ -23,9 +24,9 @@ export class Tab1Page {
     });
   }
 
-  logForm(){
-    this.logService.log(this.lifesatisfaction.value)
+  sendForm(){
+    this.httpService.save_measurement(this.lifesatisfaction.value)
   }
 }
 
-//TODO: Develop to local saving service, Develop to Http Service
+//TODO: Develop to Http Service
