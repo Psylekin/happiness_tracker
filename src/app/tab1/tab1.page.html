@@ -22,7 +22,6 @@
       </ion-radio-group>
     </ion-list>
   
-    <button ion-button type="submit" [disabled]="!lifesatisfaction.valid">Okay</button>
-  
+    <button ion-button type="submit" [disabled]="!lifesatisfaction.valid || isHappiDone">Okay</button>
   </form>
 </ion-content>
