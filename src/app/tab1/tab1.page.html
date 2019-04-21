@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color = "primary">
     <ion-title>
       Lebenszufriedenheitsmessung
     </ion-title>
@@ -9,19 +9,14 @@
 <ion-content>
   <form [formGroup]="lifesatisfaction" (ngSubmit)="sendForm()">
     <ion-list>
-      <ion-radio-group formControlName="lifesatisfationValue">
-        <ion-list-header>
-          <ion-label>Wie zufrieden bist du mit deinem Leben im Generellen?</ion-label>
-        </ion-list-header>
-  
-        <ion-item *ngFor="let i of [1,2,3,4,5,6,7,8,9,10];">
-          <ion-label>{{i}}</ion-label>
-          <ion-radio slot="start" value="{{i}}"></ion-radio>
-        </ion-item>
-  
-      </ion-radio-group>
+      <ion-list-header>Wie zufrieden bist du mit deinem Leben im Generellen?</ion-list-header>
+      <ion-item>
+          <ion-label>1</ion-label>
+          <ion-range min="1" max="10" step="1" snaps="true" color="secondary" formControlName="lifesatisfationValue" pin = "true"></ion-range>
+          <ion-label>10</ion-label>    
+      </ion-item>
     </ion-list>
   
-    <button ion-button type="submit" [disabled]="!lifesatisfaction.valid || isHappiDone">Okay</button>
+    <ion-button type="submit" [disabled]="!lifesatisfaction.valid || isHappiDone">Okay</ion-button>
   </form>
 </ion-content>
