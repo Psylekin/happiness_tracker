@@ -12,7 +12,7 @@ export class NotificationService {
     this.localNotifications.schedule({
       id: 1,
       text: 'Text',
-      // trigger: {at: new Date(new Date().getTime() + hours * 3600)},
+      trigger: {at: new Date(new Date().getTime() + 10)},
       led: 'FF0000',
       sound: null
     });
