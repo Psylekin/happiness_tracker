@@ -13,5 +13,5 @@ This project is a challenge to develop a simple solution to measure lifesatisfac
 - Do result overview in the App.
 
 - Do Userhandling.
--- Do Authentification.
--- Save data for every user
+- Do Authentification.
+- Save data for every user
