@@ -12,10 +12,10 @@ import { UiStateService } from '../services/ui-state.service';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page implements OnInit{  
-  private lifesatisfaction : FormGroup;
+  public lifesatisfaction : FormGroup;
   public now : Date = new Date();
   public date : string;
-  private isHappiDone : boolean;
+  public isHappiDone : boolean;
 
   constructor( 
     private formBuilder: FormBuilder, private httpService : HttpService, private toastService : ToastService,

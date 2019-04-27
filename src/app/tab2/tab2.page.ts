@@ -13,10 +13,10 @@ import { UiStateService } from '../services/ui-state.service';
 })
 
 export class Tab2Page {
-  private actionsatisfaction : FormGroup;
+  public actionsatisfaction : FormGroup;
   public now : Date = new Date();
   public date : string;
-  private isActDone : boolean;
+  public isActDone : boolean;
 
   constructor(
     private formBuilder: FormBuilder, private httpService : HttpService, private toastService : ToastService,
